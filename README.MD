@@ -60,53 +60,6 @@ pip install -r requirements.txt
 
 ### Запуск очистки данных
 ```bash
-# Set your credentials
-export AWS_ACCESS_KEY_ID='YOUR_KEY_ID'
-export AWS_SECRET_ACCESS_KEY='YOUR_SECRET_KEY'
-export S3_ENDPOINT='storage.yandexcloud.net'
-
-# Run the script
-spark-submit \
-  --master yarn \
-  --deploy-mode client \
-  --num-executors 3 \
-  --executor-memory 10G \
-  --executor-cores 4 \
-  --driver-memory 4G \
-  --conf spark.executor.memoryOverhead=2G \
-  --packages org.apache.hadoop:hadoop-aws:3.3.4 \
-  clean_transactions.py \
-  /user/ubuntu/data/2022-11-04.txt \
-  s3a://hw3-buck-b1g2eh9k7s7mmebes9li/cleaned_transactions/
-```
-
-## Результаты очистки
-- Исходное количество записей: 46,998,984
-- Количество записей после очистки: ~45,592,832
-- Удалено аномальных записей: ~1,406,152 (2.99%)
-
-## Структура репозитория
-```
-├── README.md
-├── requirements.txt
-├── clean_transactions.py
-├── terraform/
-│   ├── main.tf
-│   ├── variables.tf
-│   └── outputs.tf
-├── notebooks/
-│   └── data_quality_analysis.ipynb
-└── data/
-    └── cleaned_transactions/
-```
-
-## Автор
-Nikolai Bulashev
-
-## Лицензия
-MIT
-
-```bash
 export AWS_ACCESS_KEY_ID=
 export AWS_SECRET_ACCESS_KEY=
 export AWS_ENDPOINT_URL_S3=https://storage.yandexcloud.net/
@@ -126,3 +79,29 @@ spark-submit \
   /user/ubuntu/data/2022-11-04.txt \
   s3a://hw3-buck-b1g2eh9k7s7mmebes9li/cleaned_transactions/
   ```
+
+
+## Результаты очистки
+- Исходное количество записей: 46,998,984
+- Количество записей после очистки: ~45,592,832
+- Удалено аномальных записей: ~1,406,152 (2.99%)
+
+## Структура репозитория
+```
+├── README.md
+├── requirements.txt
+├── clean_transactions.py
+├── terraform/
+│   ├── main.tf
+│   ├── variables.tf
+│   └── outputs.tf
+├── notebooks/
+│   └── h3.ipynb
+
+```
+
+## Автор
+Nikolai Bulashev
+
+## Лицензия
+MIT
