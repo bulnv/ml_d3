@@ -1,0 +1,8 @@
+key.json
+id_yc_deploy
+id_yc_deploy.pub
+terraform.tfvars
+.venv
+.terraform*
+terraform.tfstate*
+terraform.tfstate

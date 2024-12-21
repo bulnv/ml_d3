@@ -1,0 +1,20 @@
+# Core dependencies
+pyspark==3.5.0
+py4j==0.10.9.7
+
+# AWS Integration
+boto3==1.34.11
+s3fs==2024.2.0
+
+# Logging and utilities
+python-json-logger==2.0.7
+
+# Optional development dependencies
+pytest==7.4.4
+black==23.12.1
+flake8==7.0.0
+
+# Hadoop and S3 dependencies will be needed in your Spark environment:
+# hadoop-aws
+# aws-java-sdk-bundle
+# These are typically managed through your Spark configuration
